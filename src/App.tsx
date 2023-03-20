@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const [items, setItems] = useState<string[]>([]);
   const handleAddItem = (text: string) => {
     setItems([...items, text]);
-  }
+  };
   return (
     <ul>
       <ItemList items={items} />

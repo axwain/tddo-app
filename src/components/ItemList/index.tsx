@@ -4,7 +4,9 @@ import { TodoItem } from '../TodoItem';
 export const ItemList: React.FC<{ items: string[] }> = ({ items }) => {
   return (
     <>
-      {items.map((item) => <TodoItem key={item} completed={false} text={item}/>)}
+      {items.map((item) => (
+        <TodoItem key={item} completed={false} text={item} />
+      ))}
     </>
   );
 };

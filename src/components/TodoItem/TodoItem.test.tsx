@@ -1,12 +1,14 @@
-import { describe, expect, it } from "@jest/globals";
-import { act, fireEvent, render } from "@testing-library/react";
+import { describe, expect, it } from '@jest/globals';
+import { act, fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { TodoItem } from '.';
 
 describe('TodoItem', () => {
   it('allows to change the state of a todo item', () => {
     const text = 'Todo Item';
-    const { container, getByRole, queryByText } = render(<TodoItem completed={false} text={text} />);
+    const { container, getByRole, queryByText } = render(
+      <TodoItem completed={false} text={text} />
+    );
     const checkbox = getByRole('checkbox') as HTMLInputElement;
     const getStrikeOutEl = () => container.getElementsByTagName('s');
 
@@ -32,5 +34,5 @@ describe('TodoItem', () => {
     expect(checkbox.checked).toBeFalsy();
     expect(getStrikeOutEl().length).toBe(0);
     expect(queryByText(text)).toBeDefined();
-  })
-})
+  });
+});

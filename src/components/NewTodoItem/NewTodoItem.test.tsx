@@ -21,9 +21,9 @@ describe('NewTodoItem', () => {
       fireEvent.change(input, { target: { value: mockedItemText } });
       expect(input?.value).toBe(mockedItemText);
       fireEvent.keyDown(input, { code: keyCode });
-    })
+    });
 
     expect(onConfirmMock).toHaveBeenCalledWith(mockedItemText);
     expect(input?.value).toBe('');
-  })
-})
+  });
+});
