@@ -22,3 +22,7 @@ export const updateTodoList = (items: Todo[], itemToUpdate: Todo) => {
   newList.splice(index, 1, itemToUpdate);
   return newList;
 };
+
+export const removeCompletedItems = (items: Todo[]) => {
+  return items.filter((item) => !item.isCompleted);
+};
