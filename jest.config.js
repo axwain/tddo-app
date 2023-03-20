@@ -6,7 +6,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css)$': 'identity-obj-proxy',
   },
-  preset: "solid-jest/preset/browser",
+  preset: "ts-jest",
   testEnvironment: "jsdom",
   testMatch: ['**/?(*.)+(test).+(ts|tsx|js)'],
   transform: {
