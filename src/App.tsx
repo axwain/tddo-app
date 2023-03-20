@@ -3,7 +3,7 @@ import { ErrorMessage } from './components/ErrorMessage';
 import { ItemList } from './components/ItemList';
 import { NewTodoItem } from './components/NewTodoItem';
 import { Todo } from './types';
-import { addTodoItem, updateTodoList } from './utils';
+import { addTodoItem, removeCompletedItems, updateTodoList } from './utils';
 
 const App: React.FC = () => {
   const [error, setError] = useState(false);
@@ -21,8 +21,14 @@ const App: React.FC = () => {
     setError(false);
   };
 
+  const handleClearComplete = () => {
+    setItems(removeCompletedItems(items));
+    setError(false);
+  };
+
   return (
     <>
+      <button onClick={handleClearComplete}>Clear Completed</button>
       <ul>
         <ItemList items={items} onUpdate={handleUpdate} />
         <NewTodoItem onConfirm={handleAddItem} />

@@ -1,13 +1,18 @@
 import { describe, expect, it } from '@jest/globals';
-import { addTodoItem, findTodoItemIndex, updateTodoList } from '.';
+import {
+  addTodoItem,
+  findTodoItemIndex,
+  removeCompletedItems,
+  updateTodoList,
+} from '.';
 import { Todo } from '../types';
 
 const searchTerm = 'Item 4';
 const itemOnList = { description: searchTerm, isCompleted: false };
 const items: Todo[] = [
-  { description: 'Item 1', isCompleted: false },
-  { description: 'Item 2', isCompleted: false },
-  { description: 'Item 3', isCompleted: false },
+  { description: 'Item 1', isCompleted: true },
+  { description: 'Item 2', isCompleted: true },
+  { description: 'Item 3', isCompleted: true },
   itemOnList,
 ];
 
@@ -67,5 +72,21 @@ describe('updateTodoList', () => {
     expect(updatedList[itemIndex].isCompleted).not.toEqual(
       list[itemIndex].isCompleted
     );
+  });
+});
+
+describe('removeCompletedItems', () => {
+  it('should remove complete items without modifying the original list', () => {
+    const list = [...items];
+    const expectedList = [itemOnList];
+    expect(removeCompletedItems(list)).toEqual(expectedList);
+    expect(list).toEqual(items);
+  });
+
+  it('should not remove any items if none of them are completed', () => {
+    const list = [itemOnList, itemOnList, itemOnList];
+    const result = removeCompletedItems(list);
+
+    expect(result).toEqual(list);
   });
 });
