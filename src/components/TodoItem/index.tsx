@@ -1,13 +1,16 @@
 import React from 'react';
 import { TodoCallback } from '../../types';
+import styles from './styles.module.css';
 
 type Props = {
-  isCompleted: boolean;
+  className?: string;
   description: string;
+  isCompleted: boolean;
   onUpdate: TodoCallback;
 };
 
 export const TodoItem: React.FC<Props> = ({
+  className,
   description,
   isCompleted,
   onUpdate,
@@ -18,8 +21,13 @@ export const TodoItem: React.FC<Props> = ({
   };
 
   return (
-    <li>
-      <input type="checkbox" checked={isCompleted} onChange={handleChange} />
+    <li className={className}>
+      <input
+        className={styles.checkbox}
+        type="checkbox"
+        checked={isCompleted}
+        onChange={handleChange}
+      />
       {itemText}
     </li>
   );

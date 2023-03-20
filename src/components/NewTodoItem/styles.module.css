@@ -1,0 +1,38 @@
+.checkbox {
+  appearance: none;
+  display: grid;
+  height: 20px;
+  place-content: center;
+  width: 20px;
+}
+
+.checkbox:disabled {
+  background-color: var(--background-color-disabled);
+  border: 2px solid var(--primary-color-disabled);
+  border-radius: 4px;
+}
+
+.textInput {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid var(--primary-color-light);
+  border-radius: 4px;
+  color: var(--foreground-color);
+  font-family: var(--font-family);
+  font-size: 20px;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  width: 100%;
+}
+
+.textInput:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 2px solid var(--primary-color);
+  margin-top: -1px;
+  transition: var(--animation-duration) border-bottom-color
+    var(--animation-curve);
+}
+
+.textInput:focus-visible {
+  outline: 2px solid var(--outline-color);
+  transition: var(--animation-duration) outline var(--animation-curve);
+}
