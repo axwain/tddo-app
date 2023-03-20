@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './App.module.css';
 import { ErrorMessage } from './components/ErrorMessage';
 import { ItemList } from './components/ItemList';
 import { NewTodoItem } from './components/NewTodoItem';
@@ -28,10 +29,16 @@ const App: React.FC = () => {
 
   return (
     <>
-      <button onClick={handleClearComplete}>Clear Completed</button>
-      <ul>
-        <ItemList items={items} onUpdate={handleUpdate} />
-        <NewTodoItem onConfirm={handleAddItem} />
+      <button className={styles.button} onClick={handleClearComplete}>
+        Clear Completed
+      </button>
+      <ul className={styles.tddoList}>
+        <ItemList
+          className={styles.item}
+          items={items}
+          onUpdate={handleUpdate}
+        />
+        <NewTodoItem className={styles.item} onConfirm={handleAddItem} />
       </ul>
       <ErrorMessage error={error}>
         <p>Item is already on the list</p>
