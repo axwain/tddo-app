@@ -1,11 +1,22 @@
 import React from 'react';
+import { Todo, TodoCallback } from '../../types';
 import { TodoItem } from '../TodoItem';
 
-export const ItemList: React.FC<{ items: string[] }> = ({ items }) => {
+type Props = {
+  items: Todo[];
+  onUpdate: TodoCallback;
+};
+
+export const ItemList: React.FC<Props> = ({ items, onUpdate }) => {
   return (
     <>
       {items.map((item) => (
-        <TodoItem key={item} completed={false} text={item} />
+        <TodoItem
+          key={item.description}
+          isCompleted={item.isCompleted}
+          description={item.description}
+          onUpdate={onUpdate}
+        />
       ))}
     </>
   );
