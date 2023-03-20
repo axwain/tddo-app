@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "client/",
+    ".vscode/",
+    "coverage/",
+    ".yarn/"
+  ]
+}
