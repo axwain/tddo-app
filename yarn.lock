@@ -837,6 +837,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@neutralinojs/lib@^3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@neutralinojs/lib/-/lib-3.9.0.tgz#ecd131755108bc1eb6e382be779f9a8496371f41"
+  integrity sha512-DcUV2YD7XhLezKIL/aGFELVogBGa3xWxxUnTNbvR4NZ7jyTarOABVYq3TxT8j3K96QG3tw6YoNz25GdcNZQ1sw==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"

@@ -1,5 +1,5 @@
 {
-  "applicationId": "js.neutralino.zero",
+  "applicationId": "ax.tddo.app",
   "version": "1.0.0",
   "defaultMode": "window",
   "documentRoot": "/resource/",
@@ -7,16 +7,20 @@
   "enableServer": true,
   "enableNativeAPI": true,
   "nativeAllowList": [
-    "app.*"
+    "app.*",
+    "filesystem.copyFile",
+    "filesystem.createDirectory",
+    "filesystem.readDirectory",
+    "filesystem.readFile",
+    "filesystem.writeFile",
+    "os.getEnv"
   ],
   "modes": {
     "window": {
       "title": "client",
-      "width": 800,
-      "height": 500,
-      "minWidth": 400,
-      "minHeight": 200,
-      "icon": "/www/icon.png"
+      "width": 580,
+      "height": 400,
+      "resizable": false
     }
   },
   "cli": {
