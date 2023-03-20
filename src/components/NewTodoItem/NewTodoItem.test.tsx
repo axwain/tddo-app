@@ -6,9 +6,7 @@ import { NewTodoItem } from '.';
 describe('NewTodoItem', () => {
   const keyCode = 'Enter';
   it('should render', () => {
-    const mockedItemText = 'Mocked Item Text';
-    const onConfirmMock = jest.fn();
-    const { queryByRole } = render(<NewTodoItem onConfirm={onConfirmMock} />);
+    const { queryByRole } = render(<NewTodoItem onConfirm={jest.fn()} />);
     const checkbox = queryByRole('checkbox') as HTMLInputElement;
     const input = queryByRole('textbox') as HTMLInputElement;
 
@@ -16,6 +14,13 @@ describe('NewTodoItem', () => {
     expect(checkbox?.disabled).toBeTruthy();
     expect(input).not.toBeNull();
     expect(input?.value).toBe('');
+  });
+
+  it('should call onUpdate when enter is pressed', () => {
+    const mockedItemText = 'Mocked Item Text';
+    const onConfirmMock = jest.fn();
+    const { queryByRole } = render(<NewTodoItem onConfirm={onConfirmMock} />);
+    const input = queryByRole('textbox') as HTMLInputElement;
 
     act(() => {
       fireEvent.change(input, { target: { value: mockedItemText } });

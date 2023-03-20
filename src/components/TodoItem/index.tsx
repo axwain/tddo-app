@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { TodoCallback } from '../../types';
 
 type Props = {
-  completed: boolean;
-  text: string;
+  isCompleted: boolean;
+  description: string;
+  onUpdate: TodoCallback;
 };
 
-export const TodoItem: React.FC<Props> = ({ completed, text }) => {
-  const [checked, setChecked] = useState(completed);
-  const itemText = checked ? <s>{text}</s> : <>{text}</>;
+export const TodoItem: React.FC<Props> = ({
+  description,
+  isCompleted,
+  onUpdate,
+}) => {
+  const itemText = isCompleted ? <s>{description}</s> : <>{description}</>;
+  const handleChange = () => {
+    onUpdate({ description, isCompleted: !isCompleted });
+  };
 
   return (
     <li>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => setChecked(!checked)}
-      />
+      <input type="checkbox" checked={isCompleted} onChange={handleChange} />
       {itemText}
     </li>
   );
