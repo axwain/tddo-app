@@ -13,7 +13,7 @@ const App: React.FC = () => {
         </p>
         <a
           className={styles.link}
-          href="https://github.com/solidjs/solid"
+          href="https://create-react-app.dev/"
           target="_blank"
           rel="noopener noreferrer"
         >

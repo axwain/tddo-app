@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "client": "cd client && npx @neutralinojs/neu run",
+    "client": "yarn run build && cd client && npx @neutralinojs/neu run",
     "test": "jest"
   },
   "license": "MIT",
