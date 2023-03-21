@@ -39,7 +39,10 @@ code {
   --primary-color: #134f5c;
   --primary-color-disabled: #d0e0e3;
   --primary-color-light: #45818e;
-  --shadow-color: #d3d4d9;
+  --shadow-color: #656565;
+  --title-color: #333;
+  --title-close-color: #df6158;
+  --title-text-color: white;
 
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -50,15 +53,53 @@ code {
   :root {
     --animation-curve: cubic-bezier(0.27, 0.43, 0.07, 0.87);
     --animation-duration: 160ms;
-    --background-color: #011627;
-    --background-color-disabled: #413f45;
-    --background-color-hover: #463f3a;
+    --background-color: #012a4a;
+    --background-color-disabled: #013a63;
+    --background-color-hover: #013a63;
     --foreground-color: white;
     --foreground-color-inverted: black;
     --outline-color: #0077b6;
-    --primary-color: #c19bff;
-    --primary-color-disabled: #d4bbfc;
-    --primary-color-light: #ceafff;
-    --shadow-color: #555b6e;
+    --primary-color: #78c6a3;
+    --primary-color-disabled: #358f80;
+    --primary-color-light: #67b99a;
+    --shadow-color: #01192c;
+    --title-color: #3a506b;
+    --title-close-color: #f08080;
+    --title-text-color: white;
   }
+}
+
+#draggableRegion {
+  display: block;
+  text-align: center;
+  user-select: none;
+  background-color: var(--title-color);
+  color: var(--title-text-color);
+  margin-bottom: 10px;
+  padding: 8px;
+  cursor: default;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#draggableRegion .windowButtons {
+  user-select: none;
+  float: right;
+}
+
+#draggableRegion .title {
+  user-select: none;
+}
+
+.windowButtons span {
+  display: inline-block;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+}
+
+.windowButtons span#closeBtn {
+  background-color: var(--title-close-color);
 }
