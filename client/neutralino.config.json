@@ -8,19 +8,24 @@
   "enableNativeAPI": true,
   "nativeAllowList": [
     "app.*",
+    "events.on",
     "filesystem.copyFile",
     "filesystem.createDirectory",
     "filesystem.readDirectory",
     "filesystem.readFile",
     "filesystem.writeFile",
-    "os.getEnv"
+    "init",
+    "os.getEnv",
+    "window.move",
+    "window.setDraggableRegion"
   ],
   "modes": {
     "window": {
       "title": "client",
       "width": 580,
       "height": 400,
-      "resizable": false
+      "resizable": false,
+      "borderless": true
     }
   },
   "cli": {
