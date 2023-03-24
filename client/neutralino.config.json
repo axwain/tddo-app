@@ -8,23 +8,30 @@
   "enableNativeAPI": true,
   "nativeAllowList": [
     "app.*",
+    "events.on",
+    "events.off",
     "filesystem.copyFile",
     "filesystem.createDirectory",
     "filesystem.readDirectory",
     "filesystem.readFile",
     "filesystem.writeFile",
-    "os.getEnv"
+    "init",
+    "os.getEnv",
+    "window.move",
+    "window.setDraggableRegion"
   ],
   "modes": {
     "window": {
-      "title": "client",
+      "title": "Tddo App",
       "width": 580,
       "height": 400,
-      "resizable": false
+      "resizable": false,
+      "borderless": true,
+      "icon": "/resource/tddo-app128.png"
     }
   },
   "cli": {
-    "binaryName": "client",
+    "binaryName": "tddo-app",
     "resourcesPath": "/resource/",
     "extensionsPath": "/extensions/",
     "binaryVersion": "4.10.0",
