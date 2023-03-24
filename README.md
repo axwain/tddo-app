@@ -1,34 +1,28 @@
-## Usage
+## Tddo App
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+This is a borderless window application meant to be run on i3wm scratchpad.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+I did this to practice more software testing and to have a little application to write "Todoy" items, i.e., things to-do today. I based this on the To-Do list from the Test Driven Development by example by Kent Beck at al.
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+### Motivation
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+I wanted to have a quick application to write pending tests and refactoring I want to do while developing applications. I also wanted for the application to not use too much system resources and that I can have it on i3's scratchpad.
 
-## Available Scripts
+I chose Neutralinojs to avoid learning a toolkit like GTK or Qt for now. I tried other more lightweight alternatives to Electron, to leverage my knowledge as a front-end developer and make this application quick, unfortunately Neutralinojs doesn't work as well under Mac (for the work-issued laptop) and borderless mode close button doesn't work for Windows.
 
-In the project directory, you can run:
+For this reason, only the Linux release is ready to use, and the Windows one with a caveat (must close it with Alt + F4).
 
-### `npm dev` or `npm start`
+I'll rewrite this application once I can switch to Linux to make more development there.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Scripts
 
-The page will reload if you make edits.<br>
+This applications uses yarn classic version. Make sure to have it installed before running any command. It was developed using Node 18 LTS, Vite, NeutralinoJs and React 18.
 
-### `npm run build`
+The following scripts are available:
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+- `yarn dev` to build the react application and run it with Neutralinojs, while also opening the web inspector
+- `dev:start` runs the application without rebuilding the React code
+- `yarn start` to run the application without the inspector. It must have been build before hand.
+- `yarn client:release` makes a release build of the application. Only the Linux one works as expected. Windows close button doesn't work, and Mac release doesn't get any input at all.
+- `yarn test` for running tests.
+- `build:icons` to build the icons needed by the application. It is used on _client:release_
