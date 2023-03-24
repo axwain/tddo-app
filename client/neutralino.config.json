@@ -9,6 +9,7 @@
   "nativeAllowList": [
     "app.*",
     "events.on",
+    "events.off",
     "filesystem.copyFile",
     "filesystem.createDirectory",
     "filesystem.readDirectory",
