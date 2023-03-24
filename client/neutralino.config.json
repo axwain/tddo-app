@@ -21,15 +21,16 @@
   ],
   "modes": {
     "window": {
-      "title": "client",
+      "title": "Tddo App",
       "width": 580,
       "height": 400,
       "resizable": false,
-      "borderless": true
+      "borderless": true,
+      "icon": "/resource/tddo-app128.png"
     }
   },
   "cli": {
-    "binaryName": "client",
+    "binaryName": "tddo-app",
     "resourcesPath": "/resource/",
     "extensionsPath": "/extensions/",
     "binaryVersion": "4.10.0",
