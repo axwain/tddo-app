@@ -8,7 +8,6 @@ export default defineConfig({
   },
   base: '',
   build: {
-    outDir: 'client/resource',
     target: 'esnext',
   },
 });

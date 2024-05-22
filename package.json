@@ -1,18 +1,17 @@
 {
-  "name": "vite-template-solid",
+  "name": "tddo-app",
+  "private": true,
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "cd client && npx @neutralinojs/neu run",
-    "dev": "vite build && yarn run dev:start",
-    "dev:start": "cd client && npx @neutralinojs/neu run -- --window-enable-inspector",
-    "client:release": "yarn build:icons && vite build && cd client && npx @neutralinojs/neu build --release",
+    "dev": "vite",
+    "client:release": "npm run build:icons && vite build",
     "test": "jest",
     "lint": "eslint",
     "format": "prettier --check src/",
     "format:fix": "prettier --write src/",
     "type:check": "tsc --noEmit",
-    "prepare": "husky install && cd client && npx @neutralinojs/neu update",
+    "prepare": "husky install && cd client",
     "build:icons": "node makeAppIcons.js"
   },
   "license": "MIT",
@@ -40,7 +39,6 @@
     "vite": "^4.1.1"
   },
   "dependencies": {
-    "@neutralinojs/lib": "^3.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
