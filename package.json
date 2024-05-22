@@ -5,14 +5,14 @@
   "description": "",
   "scripts": {
     "dev": "vite",
-    "client:release": "npm run build:icons && vite build",
+    "build": "vite build --watch",
+    "start": "npm run build && electron dist/main.js",
     "test": "jest",
     "lint": "eslint",
     "format": "prettier --check src/",
     "format:fix": "prettier --write src/",
     "type:check": "tsc --noEmit",
-    "prepare": "husky install && cd client",
-    "build:icons": "node makeAppIcons.js"
+    "prepare": "husky install && cd client"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,6 +24,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "electron": "^30.0.6",
     "esbuild": "^0.17.12",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.36.0",

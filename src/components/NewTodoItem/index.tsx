@@ -1,4 +1,3 @@
-import { events } from '@neutralinojs/lib';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 
@@ -22,10 +21,10 @@ export const NewTodoItem: React.FC<Props> = ({ className, onConfirm }) => {
   };
 
   useEffect(() => {
-    events.on('windowFocus', focusInput);
+    // events.on('windowFocus', focusInput);
 
     return () => {
-      events.off('windowFocus', focusInput);
+      // events.off('windowFocus', focusInput);
     };
   });
 
