@@ -37,7 +37,7 @@ export const saveItems = (list: Todo[], appFolder: string) => {
     }
 
     console.log('Saving items up', itemsFilePath);
-    writeFileSync(itemsFilePath, JSON.stringify(list, null, 2));
+    writeFileSync(itemsFilePath, `${JSON.stringify(list, null, 2)}\n`);
   }
 };
 

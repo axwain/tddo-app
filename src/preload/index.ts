@@ -1,8 +1,19 @@
 import { electronAPI } from '@electron-toolkit/preload';
-import { contextBridge } from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
+import type { Todo } from '../shared/types';
 
 // Custom APIs for renderer
-const api = {};
+const api = {
+  close: () => {
+    ipcRenderer.send('close');
+  },
+  loadItems: (): Promise<Todo[]> => {
+    return ipcRenderer.invoke('load-items');
+  },
+  saveItems: (items: Todo[]) => {
+    ipcRenderer.send('save-items', items);
+  },
+};
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

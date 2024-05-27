@@ -4,18 +4,16 @@ import styles from './App.module.css';
 import { ErrorMessage } from './components/ErrorMessage';
 import { ItemList } from './components/ItemList';
 import { NewTodoItem } from './components/NewTodoItem';
-import { loadItems, saveItems, setupAppFolder } from './storage';
 import { addTodoItem, removeCompletedItems, updateTodoList } from './utils';
 
 const App: React.FC = () => {
   const [error, setError] = useState(false);
   const [items, setItems] = useState<Todo[]>([]);
-  const [appDir, setAppDir] = useState('');
 
   const save = (otherList: Todo[]) => {
-    console.log('starting save', appDir);
+    console.log('starting save');
     if (otherList !== items) {
-      saveItems(otherList, appDir).then(() => console.log('Items Saved'));
+      window.api.saveItems(otherList);
     }
   };
 
@@ -42,17 +40,16 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log('Setting app folder');
-    setupAppFolder()
-      .then(async (appFolder: string) => {
-        if (appFolder) {
-          console.log('appFolder obtained', appFolder);
-          const loadedItems = await loadItems(appFolder);
-          setAppDir(appFolder);
-          setItems(loadedItems);
-        }
-      })
-      .then(() => console.log('finished loading items'));
+    console.log('Loading items');
+    window.api.loadItems().then((items) => {
+      setItems(items);
+      console.log('finished loading items');
+    });
+
+    const closeButton = document.getElementById('closeBtn') as HTMLElement;
+    closeButton.onclick = () => {
+      window.api.close();
+    };
   }, []);
 
   return (

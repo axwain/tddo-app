@@ -2,6 +2,8 @@ import { electronApp, is, optimizer } from '@electron-toolkit/utils';
 import { BrowserWindow, app, ipcMain, shell } from 'electron';
 import { join } from 'path';
 import icon from '../../resources/icon.png?asset';
+import { Todo } from '../shared/types';
+import { loadItems, saveItems, setupAppFolder } from './storage';
 
 function createWindow(): void {
   // Create the browser window.
@@ -51,8 +53,25 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window);
   });
 
+  const appFolder = setupAppFolder();
+
   // IPC test
   ipcMain.on('ping', () => console.log('pong'));
+
+  ipcMain.on('close', (event) => {
+    const webContents = event.sender;
+    const win = BrowserWindow.fromWebContents(webContents);
+    win?.close();
+  });
+
+  ipcMain.on('save-items', (_, data) => {
+    const items = data as Todo[];
+    saveItems(items, appFolder);
+  });
+
+  ipcMain.handle('load-items', () => {
+    return loadItems(appFolder);
+  });
 
   createWindow();
 
