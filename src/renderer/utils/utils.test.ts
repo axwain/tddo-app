@@ -5,7 +5,7 @@ import {
   removeCompletedItems,
   updateTodoList,
 } from '.';
-import { Todo } from '../types';
+import { Todo } from '../../shared/types';
 
 const searchTerm = 'Item 4';
 const itemOnList = { description: searchTerm, isCompleted: false };

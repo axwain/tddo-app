@@ -1,7 +1,7 @@
 import { describe, expect, it, jest } from '@jest/globals';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { Todo } from '../../types';
+import { Todo } from '../../../shared/types';
 import { ItemList } from './';
 
 describe('ItemList', () => {

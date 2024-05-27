@@ -1,4 +1,4 @@
-import { Todo } from '../types';
+import { Todo } from '../../shared/types';
 
 export const findTodoItemIndex = (items: Todo[], searchTerm: string) => {
   return items.findIndex((item) => item.description === searchTerm);

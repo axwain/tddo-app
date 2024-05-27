@@ -5,8 +5,9 @@
     "src/renderer/**/*",
     "src/renderer/**/*.tsx",
     "src/preload/*.d.ts",
+    "src/shared/**/*",
     "src/globals.d.ts"
-  ],
+, "src/shared/types.tsx"  ],
   "compilerOptions": {
     "composite": true,
     "jsx": "react",

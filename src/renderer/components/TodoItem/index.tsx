@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoCallback } from '../../types';
+import { TodoCallback } from '../../../shared/types';
 import styles from './styles.module.css';
 
 type Props = {
