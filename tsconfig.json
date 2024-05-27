@@ -1,23 +1,11 @@
 {
+  "files": [],
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }],
   "compilerOptions": {
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": [
-      "vite/client"
-    ],
-    "noEmit": true,
-    "isolatedModules": false,
-    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": [
-    "vite.config.ts"
-  ]
+    "src/globals.d.ts"
+  ],
 }

@@ -3,18 +3,18 @@ const icongen = require('icon-gen');
 const options = {
   report: true,
   ico: {
-    name: 'favicon',
-    sizes: [48],
-  },
-  icns: {
-    name: 'tddo-app',
+    name: 'icon',
     sizes: [256],
   },
+  icns: {
+    name: 'icon',
+    sizes: [512],
+  },
   favicon: {
-    name: 'tddo-app',
-    pngSizes: [128],
-    icoSizes: [],
+    name: 'icon',
+    pngSizes: [512],
+    icoSizes: [256],
   },
 };
 
-icongen('src/icon.svg', 'public/', options);
+icongen('src/icon.svg', 'build/', options);
