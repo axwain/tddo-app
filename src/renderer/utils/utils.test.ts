@@ -67,10 +67,10 @@ describe('updateTodoList', () => {
 
     expect(updatedList).not.toEqual(list);
     expect(updatedList[itemIndex].description).toEqual(
-      list[itemIndex].description
+      list[itemIndex].description,
     );
     expect(updatedList[itemIndex].isCompleted).not.toEqual(
-      list[itemIndex].isCompleted
+      list[itemIndex].isCompleted,
     );
   });
 });

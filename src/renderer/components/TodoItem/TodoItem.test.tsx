@@ -12,7 +12,7 @@ describe('TodoItem', () => {
         description={description}
         isCompleted={isCompleted}
         onUpdate={onUpdateMock}
-      />
+      />,
     );
   };
 

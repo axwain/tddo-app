@@ -8,7 +8,7 @@ describe('ErrorMessage', () => {
   const messageParagraph = <p>{message}</p>;
   const RenderErrorMessage = (error = false) => {
     return render(
-      <ErrorMessage error={error}>{messageParagraph}</ErrorMessage>
+      <ErrorMessage error={error}>{messageParagraph}</ErrorMessage>,
     );
   };
   it('should be empty if no error', () => {

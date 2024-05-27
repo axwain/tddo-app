@@ -13,6 +13,7 @@ export const setupAppFolder = async () => {
   const appFolder = getAppFolder(userFolder);
   if (userFolder) {
     // if appFolder doesn't exist, create it
+    console.log(appFolder);
   }
 
   return '';
@@ -23,7 +24,7 @@ const getItemsBackupPath = (appFolder: string) => `${appFolder}/items.json.bk`;
 
 export const saveItems = async (
   list: Todo[],
-  appFolder: string
+  appFolder: string,
 ): Promise<void> => {
   console.log('Preparing to save items');
   if (appFolder) {
@@ -31,6 +32,7 @@ export const saveItems = async (
     const itemsFilePath = getItemsFilePath(appFolder);
     const itemsBackupPath = getItemsBackupPath(appFolder);
     // if save file exists, save backup
+    console.log(itemsBackupPath);
 
     console.log('Saving items up', itemsFilePath);
     // save file
@@ -39,6 +41,7 @@ export const saveItems = async (
 
 export const loadItems = async (appFolder: string): Promise<Todo[]> => {
   const itemsFilePath = getItemsFilePath(appFolder);
+  console.log(itemsFilePath);
   // if save file exists, load it
 
   return [];

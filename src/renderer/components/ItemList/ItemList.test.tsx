@@ -12,7 +12,7 @@ describe('ItemList', () => {
       { description: 'Item 3', isCompleted: false },
     ];
     const { container, queryByText } = render(
-      <ItemList items={items} onUpdate={jest.fn()} />
+      <ItemList items={items} onUpdate={jest.fn()} />,
     );
     expect(container.childElementCount).toBe(items.length);
     for (const item of items) {
