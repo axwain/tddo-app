@@ -7,3 +7,4 @@ sample
 .yarn
 build/*
 !build/*.plist
+resources/

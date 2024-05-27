@@ -17,7 +17,7 @@ nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
-  createDesktopShortcut: ask
+  createDesktopShortcut: false
 mac:
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
@@ -31,12 +31,12 @@ dmg:
 linux:
   target:
     - AppImage
-    - deb
+    - pacman
   maintainer: axwain
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
-publish:
-  provider: generic
-  url: https://example.com/auto-updates
+# publish:
+#   provider: generic
+#   url: https://example.com/auto-updates
