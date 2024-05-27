@@ -37,6 +37,7 @@ export const saveItems = async (
     console.log('Saving items up', itemsFilePath);
     // save file
   }
+  console.log(list);
 };
 
 export const loadItems = async (appFolder: string): Promise<Todo[]> => {
