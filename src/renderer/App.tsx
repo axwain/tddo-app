@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Todo } from '../shared/types';
 import styles from './App.module.css';
 import { ErrorMessage } from './components/ErrorMessage';
 import { ItemList } from './components/ItemList';
 import { NewTodoItem } from './components/NewTodoItem';
 import { loadItems, saveItems, setupAppFolder } from './storage';
-import { Todo } from '../shared/types';
 import { addTodoItem, removeCompletedItems, updateTodoList } from './utils';
 
 const App: React.FC = () => {
