@@ -1,4 +1,9 @@
 coverage
 dist
 node_modules
+out
+sample
+.vscode
 .yarn
+build/*
+!build/*.plist
